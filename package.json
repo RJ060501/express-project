@@ -6,6 +6,7 @@
     "nodemon": "^2.0.16"
   },
   "scripts": {
+    "watch": "nodemon server.js",
     "start": "node server.js"
   },
   "name": "express-project",
