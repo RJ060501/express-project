@@ -11,6 +11,8 @@ app.set('views', path.join(__dirname, 'views'));
 
 const PORT = 3000;
 
+//middleware
+//timer should always be one of our first middlewwares.
 app.use((req, res, next) => {
   const start = Date.now();
   next();
@@ -19,6 +21,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/site', express.static(path.join(__dirname, 'public')));
+//looks at content type and sets the req.body parameter to a javascript object when the applications type is application/JSON
 app.use(express.json());
 
 app.get('/', (req, res) => {
